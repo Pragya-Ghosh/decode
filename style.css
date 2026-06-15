@@ -99,7 +99,7 @@ body, html {
     gap: 30px;
     align-items: center;
     background-color: var(--global-nav-bg);
-    padding: 15px 30px;
+    padding: 15px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
