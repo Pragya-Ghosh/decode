@@ -95,12 +95,11 @@ body, html {
 /* GLOBAL NAVBAR */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Stops the logo and links from splitting apart */
+    gap: 30px;
     align-items: center;
     background-color: var(--global-nav-bg);
-    padding: 15px 40px;
-    
-    /* So that navbar sticks to the top */
+    padding: 15px 30px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -109,10 +108,8 @@ body, html {
 .navbar .logo {
     font-family: 'Monoton', sans-serif;
     color: var(--global-nav-text);
-    font-size: 2.2rem;     /* Makes it nice and prominent */
+    font-size: 2.2rem;
     font-weight: normal;   
-    letter-spacing: 1.5px;   /* Gives the letters a little breathing room */
-    text-decoration: none;
 }
 
 .nav-links {
