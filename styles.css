@@ -1,0 +1,153 @@
+/* GLOBAL SETTINGS & VARIABLES */
+
+/* Import the 'Inter' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+:root {
+    /* Global UI (Navbar & Footer) */
+    --global-nav-bg: #071320; 
+    --global-nav-text: #ffffff;
+
+    /* Professional Mode Palette */
+    --prof-bg: #f8f9fa;       
+    --prof-text: #2b2d42;     
+    --prof-accent: #0056b3;  
+
+    /* Personal Mode Palette */
+    --pers-bg: #fffdf7;      
+    --pers-text: #333333;     
+    --pers-accent: #e6a817; 
+}
+
+/* Base resets for the whole website */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+}
+
+
+/* SPLIT-SCREEN HOMEPAGE (index.html) */
+.split-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.split-half {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: flex 0.3s ease; /* Smooth expansion animation */
+}
+
+.split-half:hover {
+    flex: 1.05; /* Gently expands the side you hover over */
+}
+
+/* Applying our variables to the left and right halves */
+.personal-side {
+    background-color: var(--pers-bg);
+    color: var(--pers-text);
+}
+
+.professional-side {
+    background-color: var(--prof-bg);
+    color: var(--prof-text);
+}
+
+.content-box {
+    padding: 2rem;
+}
+
+/* Base button styling */
+.split-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.split-btn:hover {
+    transform: translateY(-3px); /* Button lifts up slightly */
+    opacity: 0.9;
+}
+
+/* Coloring the buttons specifically for their sides */
+.personal-side .split-btn {
+    background-color: var(--pers-accent);
+    color: #000;
+}
+
+.professional-side .split-btn {
+    background-color: var(--prof-accent);
+    color: #fff;
+}
+
+
+/* GLOBAL NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--global-nav-bg);
+    padding: 15px 40px;
+    
+    /* So that navbar sticks to the top */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-family: 'Monoton', sans-serif;
+    color: var(--global-nav-text);
+    font-size: 2.2rem;     /* Makes it nice and prominent */
+    font-weight: normal;   
+    letter-spacing: 1.5px;   /* Gives the letters a little breathing room */
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Default hover color for the nav */
+.nav-links a:hover {
+    color: var(--pers-accent); 
+}
+
+
+/* CONTENT PAGE THEMES */
+/* Add this class to the <body> tag in personal.html */
+.personal-page {
+    background-color: var(--pers-bg);
+    color: var(--pers-text);
+    min-height: 100vh;
+}
+
+/* Add this class to the <body> tag in professional.html */
+.professional-page {
+    background-color: var(--prof-bg);
+    color: var(--prof-text);
+    min-height: 100vh;
+}
