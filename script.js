@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.getElementById('home');
-    const starCount = 200; 
+    const starCount = 300; 
 
     for (let i = 0; i < starCount; i++) {
         let star = document.createElement('div');
