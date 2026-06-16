@@ -268,18 +268,18 @@ html, body {
     min-width: 0; /* prevents overflow */
 }
 
-.skill-card i {
-    font-size: 2.8rem;
-    color: var(--pers-accent);
-}
-
 .skill-card span {
     font-family: 'Courier Prime', monospace;
-    font-size: 1rem;
+    font-size: clamp(0.7rem, 1vw, 1rem);
     color: #d1d5db;
     text-align: center;
     line-height: 1.4;
     word-break: break-word;
+}
+
+.skill-card i {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: var(--pers-accent);
 }
 
 /* RESUME BUTTON */
@@ -314,19 +314,21 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 0;
+    padding-left: 20px;
 }
- 
+
 .contact-big {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
     font-weight: 900;
     color: #ffffff;
     line-height: 1.05;
     letter-spacing: -2px;
 }
- 
+
 .contact-big--accent {
     color: var(--pers-accent);
     margin-top: 16px;
+    padding-left: 40px; /* staggered indent like the reference */
 }
  
 /* CONTACT FORM */
@@ -472,6 +474,12 @@ html, body {
     }
     .contact-big {
         font-size: 2.8rem;
+    }
+    .contact-big--accent {
+        padding-left: 20px;
+    }
+    .contact-left {
+        padding-left: 0;
     }
 
     .site-footer {
