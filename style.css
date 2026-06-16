@@ -244,41 +244,42 @@ html, body {
 /* SKILL CARDS GRID */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 16px;
     margin-top: 10px;
-    max-width: 800px;
+    width: 100%;
+}
+
+.skills-grid.soft {
+    margin-top: 24px;
 }
 
 .skill-card {
     background-color: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
-    padding: 28px 16px 20px;
+    padding: 32px 8px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
     cursor: default;
-}
-
-.skill-card:hover {
-    background-color: rgba(230, 168, 23, 0.1);
-    border-color: var(--pers-accent);
-    transform: translateY(-4px);
+    min-width: 0; /* prevents overflow */
 }
 
 .skill-card i {
-    font-size: 2rem;
+    font-size: 2.8rem;
     color: var(--pers-accent);
 }
 
 .skill-card span {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #d1d5db;
     text-align: center;
+    line-height: 1.4;
+    word-break: break-word;
 }
 
 /* RESUME BUTTON */
@@ -462,7 +463,7 @@ html, body {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .contact-layout {
@@ -481,4 +482,10 @@ html, body {
         text-align: center;
     }
     .footer-quote { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
