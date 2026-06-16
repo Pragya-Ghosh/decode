@@ -1,114 +1,49 @@
-/* Import Inter and Monton font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
-/*Import social icons from FontAwesome */
+/* Import Social Icons */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-/*CSS Reset */
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 html, body {
     width: 100%;
-    overflow-x: hidden; /* Absolutely prevents horizontal scrolling */
+    overflow-x: hidden;
+    background-color: #f4f6f8;
 }
 
 :root {
-    /* Global UI (Navbar & Footer) */
-    --global-nav-bg: #071320; 
+    /* Global UI */
+    --global-nav-bg: #071320;
     --global-nav-text: #ffffff;
 
-    /* Professional Mode Palette */
+    /* Professional Palette */
     --prof-bg: #f8f9fa;       
     --prof-text: #2b2d42;     
     --prof-accent: #0056b3;  
 
-    /* Personal Mode Palette */
+    /* Personal Palette */
     --pers-bg: #fffdf7;      
     --pers-text: #333333;     
     --pers-accent: #e6a817; 
 }
 
-/* Base resets for the whole website */
-body, html {
-    margin: 0;
-    padding: 0;
+body {
     font-family: 'Inter', sans-serif;
-    height: 100%;
+    color: #333;
 }
-
-
-/* SPLIT-SCREEN HOMEPAGE (index.html) */
-.split-container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-}
-
-.split-half {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: flex 0.3s ease; /* Smooth expansion animation */
-}
-
-.split-half:hover {
-    flex: 1.05; /* Gently expands the side you hover over */
-}
-
-/* Applying our variables to the left and right halves */
-.personal-side {
-    background-color: var(--pers-bg);
-    color: var(--pers-text);
-}
-
-.professional-side {
-    background-color: var(--prof-bg);
-    color: var(--prof-text);
-}
-
-.content-box {
-    padding: 2rem;
-}
-
-/* Base button styling */
-.split-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.split-btn:hover {
-    transform: translateY(-3px); /* Button lifts up slightly */
-    opacity: 0.9;
-}
-
-/* Coloring the buttons specifically for their sides */
-.personal-side .split-btn {
-    background-color: var(--pers-accent);
-    color: #000;
-}
-
-.professional-side .split-btn {
-    background-color: var(--prof-accent);
-    color: #fff;
-}
-
 
 /* GLOBAL NAVBAR */
 .navbar {
     display: flex;
-    justify-content: flex-start; /* Stops the logo and links from splitting apart */
+    justify-content: flex-start;
     gap: 30px;
     align-items: center;
     background-color: var(--global-nav-bg);
@@ -122,7 +57,7 @@ body, html {
     font-family: 'Monoton', sans-serif;
     color: var(--global-nav-text);
     font-size: 2.2rem;
-    font-weight: normal;   
+    font-weight: normal;
 }
 
 .nav-links {
@@ -141,18 +76,16 @@ body, html {
     transition: color 0.3s ease;
 }
 
-/* Default hover color for the nav */
 .nav-links a:hover {
-    color: var(--pers-accent); 
+    color: var(--pers-accent);
 }
 
-
 .social-icons {
-            margin-left: auto;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
 
 .social-icons a {
     color: #ffffff;
@@ -166,49 +99,49 @@ body, html {
     transform: translateY(-3px);
 }
 
-/* --- THE TWO DOORS LAYOUT --- */
+/* HERO SECTION */
 .hero-section {
     min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    padding: 10px 20px 40px;
 }
 
 .hero-title {
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 800;
     color: #071320;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
 }
 
 .doors-container {
     display: flex;
-    gap: 160px; /* Widened gap between doors */
+    gap: 160px;
     justify-content: center;
     align-items: flex-end;
-    perspective: 1200px; 
+    perspective: 1500px;
 }
 
-/* --- DOOR WRAPPER & INTERIOR --- */
+/* DOOR WRAPPERS */
 .door-wrapper {
     position: relative;
-    width: 320px;
-    height: 500px;
-    border: 10px solid #2a2a2a; 
+    width: 360px;
+    height: 560px;
+    border: 15px solid #222;
     border-bottom: 0;
-    border-radius: 10px 10px 0 0;
-    background-color: #111; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2), inset 0 0 50px rgba(0,0,0,0.8);
+    border-radius: 12px 12px 0 0;
+    background-color: #0a0a0a;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 0 80px rgba(0,0,0,0.9), inset 0 10px 20px rgba(0,0,0,0.8);
 }
 
 .door-interior {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    padding: 40px 20px;
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -217,7 +150,7 @@ body, html {
     color: white;
     z-index: 1;
     opacity: 0;
-    transition: opacity 0.5s ease 0.2s; 
+    transition: opacity 0.5s ease 0.2s;
 }
 
 .door-wrapper:hover .door-interior {
@@ -225,119 +158,130 @@ body, html {
 }
 
 .door-interior h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 15px;
 }
 
 .door-interior p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 25px;
-    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255,255,255,0.85);
 }
 
 .enter-btn {
-    padding: 10px 24px;
-    border: 1px solid white;
+    padding: 12px 28px;
+    border: 2px solid white;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
     transition: all 0.3s;
+    border-radius: 4px;
 }
 
 .enter-btn:hover {
     background: white;
     color: black;
+    transform: scale(1.05);
 }
 
-/* --- THE ACTUAL 3D DOORS --- */
+/* 3D DOOR MECHANICS */
 .door {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #333;
-    transform-origin: left; 
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 2px 2px 0 0;
-    box-shadow: inset -5px 0 10px rgba(0,0,0,0.2);
+    border-radius: 4px 4px 0 0;
     cursor: pointer;
 }
 
 .door::after {
     content: '';
     position: absolute;
-    right: 15px;
+    right: 20px;
     top: 50%;
-    width: 15px;
-    height: 15px;
-    background-color: #e0e0e0;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .door-wrapper:hover .door {
-    transform: rotateY(-85deg); 
+    transform: rotateY(-80deg);
 }
 
-/* --- DOOR 1: PROFESSIONAL --- */
+/* PROFESSIONAL DOOR */
 .prof-door {
-    background: linear-gradient(135deg, #071320, #1a2a3a);
-    border-right: 1px solid #333;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%);
+    border-right: 3px solid #334155;
+    border-top: 1px solid #475569;
+    box-shadow: inset -8px 0 15px rgba(0,0,0,0.6), inset 2px 2px 5px rgba(255,255,255,0.1);
+}
+
+.prof-door::after {
+    background-color: #94a3b8;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.6), inset 2px 2px 4px rgba(255,255,255,0.4);
 }
 
 .prof-door .door-label {
     font-family: 'Courier Prime', monospace;
-    font-size: 2.5rem;
-    color: #4E8D9C; 
-    transform: rotate(-90deg); 
-    letter-spacing: 2px;
+    font-size: 3rem;
+    color: #38bdf8;
+    transform: rotate(-90deg);
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
 
 .prof-interior {
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.1"><circle cx="50" cy="50" r="2" fill="white"/></svg>'), linear-gradient(to bottom, #071320, #000);
+    background: radial-gradient(circle at center, #0f172a 0%, #000000 100%);
 }
 
-/* --- DOOR 2: PERSONAL --- */
+/* PERSONAL DOOR */
 .pers-door {
-    background: #fdfbf7;
-    border: 1px solid #e0e0e0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.05) 100%), linear-gradient(to bottom, #f5ecd5 0%, #e8d8b7 100%);
+    border-right: 3px solid #d4c39f;
+    border-top: 1px solid #fff;
+    box-shadow: inset -8px 0 15px rgba(0,0,0,0.2), inset 2px 2px 5px rgba(255,255,255,0.5);
 }
 
 .pers-door::after {
-    background-color: #b08d57; 
+    background-color: #b08d57;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4), inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.6);
 }
 
 .pers-door .door-label {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 2.5rem;
-    color: #b08d57; 
+    font-size: 3rem;
+    color: #8c6b3e;
     transform: rotate(-90deg);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
 
 .pers-interior {
-    background: linear-gradient(to bottom, #EDF7BD, #85C79A); 
+    background: radial-gradient(circle at top right, #fcf6e3 0%, #d4e0c8 100%);
 }
 
 .pers-interior h2, .pers-interior p {
-    color: #071320; 
+    color: #1a2b22;
 }
 
 .pers-interior .enter-btn {
-    border-color: #071320;
-    color: #071320;
+    border-color: #1a2b22;
+    color: #1a2b22;
 }
 
 .pers-interior .enter-btn:hover {
-    background: #071320;
-    color: #EDF7BD;
+    background: #1a2b22;
+    color: #fcf6e3;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 850px) {
     .navbar {
         flex-direction: column;
@@ -348,60 +292,11 @@ body, html {
     }
     .doors-container {
         flex-direction: column;
-        gap: 40px;
+        gap: 50px;
         align-items: center;
     }
     .door-wrapper {
-        width: 280px;
-        height: 400px;
-    }
-}
-    
-
-
-/* CONTENT PAGE THEMES */
-/* Add this class to the <body> tag in personal.html */
-.personal-page {
-    background-color: var(--pers-bg);
-    color: var(--pers-text);
-    min-height: 100vh;
-}
-
-/* Add this class to the <body> tag in professional.html */
-.professional-page {
-    background-color: var(--prof-bg);
-    color: var(--prof-text);
-    min-height: 100vh;
-}
-
-
-/* =========================================
-   MOBILE RESPONSIVENESS
-   ========================================= */
-
-/* only apply when the screen is smaller than 768px (Phones/Small Tablets) */
-@media (max-width: 768px) {
-    
-    .navbar {
-        flex-direction: column; 
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 15px;
-        padding-left: 0;
-    }
-
-    /* Split-Screen Mobile Fix */
-    .split-screen-container {
-        flex-direction: column; 
-    }
-    
-    .split-pane {
-        min-height: 50vh; 
-        width: 100%;      
+        width: 300px;
+        height: 480px;
     }
 }
