@@ -1,10 +1,7 @@
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
-
-/* Import Social Icons */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 /* CSS Reset */
 * {
@@ -15,29 +12,22 @@
 
 html, body {
     width: 100%;
-    overflow-x: hidden;
-    background-color: #f4f6f8;
+    background-color: #071320; /* Nav bar blue base */
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
     /* Global UI */
     --global-nav-bg: #071320;
     --global-nav-text: #ffffff;
-
-    /* Professional Palette */
-    --prof-bg: #f8f9fa;       
-    --prof-text: #2b2d42;     
-    --prof-accent: #0056b3;  
-
-    /* Personal Palette */
-    --pers-bg: #fffdf7;      
-    --pers-text: #333333;     
     --pers-accent: #e6a817; 
-}
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: #333;
+    /* Folder Colors (Dark Space Theme) */
+    --folder-1: #0d1e33;
+    --folder-2: #132845;
+    --folder-3: #1a3459;
+    --folder-4: #22416d;
 }
 
 /* GLOBAL NAVBAR */
@@ -47,10 +37,13 @@ body {
     gap: 30px;
     align-items: center;
     background-color: var(--global-nav-bg);
-    padding: 15px 40px;
-    position: sticky;
+    padding: 0 40px;
+    height: 80px; /* Fixed height for sticky calculation */
+    position: fixed; /* Fixed to always stay on top */
     top: 0;
+    width: 100%;
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .navbar .logo {
@@ -77,7 +70,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--pers-accent);
+    color: var(--pers-accent); 
 }
 
 .social-icons {
@@ -95,211 +88,223 @@ body {
 }
 
 .social-icons a:hover {
-    color: #85C79A;
+    color: var(--pers-accent); 
     transform: translateY(-3px);
 }
 
 /* HERO SECTION */
 .hero-section {
-    min-height: calc(100vh - 70px);
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Massive padding to push doors into their own "half" space */
-    padding: 100px 5% 100px; 
-}
-
-.doors-container {
-    display: flex;
-    gap: 5%; /* Relative gap to maintain balance on any screen */
     justify-content: center;
-    width: 100%; /* Allows doors to occupy more horizontal space */
-    perspective: 2000px; /* Deeper 3D effect */
+    align-items: center;
+    background-color: var(--global-nav-bg);
+    /* Added a static starfield for deeper background */
+    background-image: 
+        radial-gradient(1px 1px at 25px 5px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
+        radial-gradient(1px 1px at 50px 25px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
+        radial-gradient(1px 1px at 125px 20px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
+        radial-gradient(1.5px 1.5px at 50px 75px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
+        radial-gradient(2px 2px at 15px 125px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
+        radial-gradient(2.5px 2.5px at 110px 140px, rgba(255,255,255,0.8), rgba(255,255,255,0));
+    background-size: 200px 200px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
 }
 
 .hero-title {
-    margin-top: 50px;
-    margin-bottom: 120px; /* Big space between text and the doors */
-    text-align: center;
-    font-size: 5rem; /* Much bigger */
-    font-weight: 900; /* Extra bold */
-    color: #071320;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #ffffff; /* Changed to white */
     letter-spacing: -3px;
+    text-align: center;
+    z-index: 10;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    padding: 0 20px;
+    margin-bottom: 20vh; /* Moved text up */
 }
 
-/* DOOR WRAPPERS */
-.door-wrapper {
-    position: relative;
-    width: 420px;   /* Significantly wider */
-    height: 650px;  /* Significantly taller */
-    border: 20px solid #1a1a1a;
-    border-bottom: 0;
-    border-radius: 16px 16px 0 0;
-    background-color: #0a0a0a;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 0 80px rgba(0,0,0,0.9), inset 0 10px 20px rgba(0,0,0,0.8);
-}
-
-.door-interior {
+/* PLANETS */
+.planet {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    padding: 40px 30px;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.planet-right {
+    width: 220px;
+    height: 220px;
+    right: 15%;
+    top: 40%;
+    /* Orange/Gold to match your accent color */
+    background: radial-gradient(circle at 30% 30%, #e6a817, #8b4513, #000);
+    box-shadow: 0 0 50px rgba(230, 168, 23, 0.2), inset -30px -30px 50px rgba(0,0,0,0.9);
+    animation: float-planet 10s ease-in-out infinite;
+}
+
+.planet-left {
+    width: 140px;
+    height: 140px;
+    left: 15%;
+    top: 65%;
+    /* Ice blue planet */
+    background: radial-gradient(circle at 30% 30%, #4facfe, #0a4f8f, #000);
+    box-shadow: 0 0 40px rgba(79, 172, 254, 0.2), inset -20px -20px 40px rgba(0,0,0,0.9);
+    animation: float-planet 12s ease-in-out infinite reverse;
+}
+
+@keyframes float-planet {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* SPARKLE STARS */
+.star {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: twinkle linear infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.1; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 10px #fff, 0 0 20px var(--pers-accent); }
+    100% { opacity: 0.1; transform: scale(0.5); }
+}
+
+/* FILE FOLDER SCROLL EFFECT */
+.portfolio-content {
+    position: relative;
+    z-index: 100;
+    padding-bottom: 100vh; /* Extra space to scroll past the last folder */
+}
+
+.folder-section {
+    position: sticky;
+    /* 80px nav + 50px tab = 130px */
+    top: 130px; 
+    height: calc(100vh - 130px);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.6);
+    padding: 60px;
+    color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s ease 0.2s;
+    overflow-y: auto;
 }
 
-.door-wrapper:hover .door-interior {
-    opacity: 1;
-}
-
-.door-interior h2 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-}
-
-.door-interior p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: rgba(255,255,255,0.85);
-}
-
-.enter-btn {
-    padding: 12px 28px;
-    border: 2px solid white;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    border-radius: 4px;
-}
-
-.enter-btn:hover {
-    background: white;
-    color: black;
-    transform: scale(1.05);
-}
-
-/* 3D DOOR MECHANICS */
-.door {
+.folder-tab {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    transform-origin: left;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px 4px 0 0;
-    cursor: pointer;
-}
-
-.door::after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-}
-
-.door-wrapper:hover .door {
-    transform: rotateY(-80deg);
-}
-
-/* PROFESSIONAL DOOR */
-.prof-door {
-    /* Adds a subtle grain texture */
-    background: 
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 5px),
-        linear-gradient(135deg, #1e293b, #0f172a, #020617);
-    border-right: 5px solid #334155;
-}
-
-.prof-door::after {
-    background-color: #94a3b8;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.6), inset 2px 2px 4px rgba(255,255,255,0.4);
-}
-
-.prof-door .door-label {
+    top: -50px;
+    height: 50px;
+    padding: 0 40px;
+    line-height: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
     font-family: 'Courier Prime', monospace;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Individual Folder Styling & Tab Positioning */
+#about {
+    background-color: var(--folder-1);
+}
+#about .folder-tab {
+    background-color: var(--folder-1);
+    left: 5%;
+}
+
+#skills {
+    background-color: var(--folder-2);
+}
+#skills .folder-tab {
+    background-color: var(--folder-2);
+    left: 25%;
+}
+
+#resume {
+    background-color: var(--folder-3);
+}
+#resume .folder-tab {
+    background-color: var(--folder-3);
+    left: 50%;
+}
+
+#contact {
+    background-color: var(--folder-4);
+}
+#contact .folder-tab {
+    background-color: var(--folder-4);
+    left: 75%;
+}
+
+/* Inner Content Styling for Folders */
+.folder-inner h2 {
     font-size: 3rem;
-    color: #38bdf8;
-    transform: rotate(-90deg);
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    margin-bottom: 20px;
+    color: var(--pers-accent);
 }
 
-.prof-interior {
-    background: radial-gradient(circle at center, #0f172a 0%, #000000 100%);
+.folder-inner p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    color: #d1d5db;
 }
 
-/* PERSONAL DOOR */
-.pers-door {
-    /* Adds a subtle wood grain look */
-    background: 
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%),
-        linear-gradient(to bottom, #f5ecd5, #e8d8b7, #b89b72);
-    border-right: 5px solid #d4c39f;
+/* Custom Scrollbar for folders */
+.folder-section::-webkit-scrollbar {
+    width: 8px;
 }
-
-.pers-door::after {
-    background-color: #b08d57;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.4), inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.6);
+.folder-section::-webkit-scrollbar-track {
+    background: transparent;
 }
-
-.pers-door .door-label {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 3rem;
-    color: #8c6b3e;
-    transform: rotate(-90deg);
-    letter-spacing: 3px;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-}
-
-.pers-interior {
-    background: radial-gradient(circle at top right, #fcf6e3 0%, #d4e0c8 100%);
-}
-
-.pers-interior h2, .pers-interior p {
-    color: #1a2b22;
-}
-
-.pers-interior .enter-btn {
-    border-color: #1a2b22;
-    color: #1a2b22;
-}
-
-.pers-interior .enter-btn:hover {
-    background: #1a2b22;
-    color: #fcf6e3;
+.folder-section::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 850px) {
     .navbar {
+        height: auto;
+        padding: 15px;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
     .social-icons {
         margin-left: 0;
     }
-    .doors-container {
-        flex-direction: column;
-        gap: 50px;
-        align-items: center;
+    .hero-title {
+        font-size: 3.5rem;
     }
-    .door-wrapper {
-        width: 300px;
-        height: 480px;
+    .folder-section {
+        /* Adjust stickiness for taller mobile nav */
+        top: 180px; 
+        height: calc(100vh - 180px);
+        padding: 30px 20px;
+    }
+    .folder-tab {
+        padding: 0 20px;
+        font-size: 0.9rem;
+        left: 0 !important; /* Stack tabs to the left on mobile */
+        width: auto;
+    }
+    /* Stagger tabs slightly on mobile */
+    #about .folder-tab { margin-left: 5px; }
+    #skills .folder-tab { margin-left: 110px; }
+    #resume .folder-tab { margin-left: 210px; }
+    #contact .folder-tab { margin-left: 310px; }
+    
+    /* If screen is very small, tabs might overlap, hide tab labels and rely on titles */
+    @media (max-width: 500px) {
+            .folder-tab { margin-left: 5% !important; }
     }
 }

@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Pragya Ghosh | Space Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">Decode</div>
         <ul class="nav-links">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#resume">Resume</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div class="social-icons">
@@ -25,36 +27,72 @@
         </div>
     </nav>
 
-
-    <!-- The 3D Doors Section -->
+    <!-- HERO SECTION -->
     <section class="hero-section" id="home">
-    <div class="hero-header-container">
         <h1 class="hero-title">Hi, I'm Pragya Ghosh.</h1>
-    </div>
+        <div class="planet planet-right"></div>
+        <div class="planet planet-left"></div>
+    </section>
 
-    <div class="doors-container">
-        <div class="door-wrapper">
-            <div class="door-interior prof-interior">
-                <h2>&lt;coder&gt;</h2>
-                <p>SEIR Epidemiology models, Arch Linux, and clean architecture.</p>
-                <a href="professional.html" class="enter-btn">View Projects</a>
+    <!-- FOLDER SCROLL EFFECT WRAPPER -->
+    <div class="portfolio-content">
+        
+        <!-- FOLDER 1: ABOUT -->
+        <section class="folder-section" id="about">
+            <div class="folder-tab">01. About</div>
+            <div class="folder-inner">
+                <h2>Decrypting the Universe.</h2>
+                <p>Welcome to my database. I'm a developer passionate about building seamless, out-of-this-world experiences. When you scroll through this site, you are quite literally opening up my files. Go ahead, explore what makes me tick.</p>
+                <br>
+                <p>Use this section to write a brief bio about yourself, your journey into tech, and what drives you to create amazing software.</p>
             </div>
-            <div class="door prof-door">
-                <div class="door-label">&lt;coder&gt;</div>
-            </div>
-        </div>
+        </section>
 
-        <div class="door-wrapper">
-            <div class="door-interior pers-interior">
-                <h2>creative</h2>
-                <p>Creative slice of life</p>
-                <a href="personal.html" class="enter-btn">Creative Pursuits</a>
+        <!-- FOLDER 2: SKILLS -->
+        <section class="folder-section" id="skills">
+            <div class="folder-tab">02. Skills</div>
+            <div class="folder-inner">
+                <h2>Tools of the Trade.</h2>
+                <p>Every astronaut needs a good toolkit. Here are the languages, frameworks, and technologies I use to navigate the digital cosmos.</p>
+                <br>
+                <ul style="list-style-type: none; display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                    <li style="background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 5px; font-family: 'Courier Prime', monospace;">HTML/CSS</li>
+                    <li style="background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 5px; font-family: 'Courier Prime', monospace;">JavaScript</li>
+                    <li style="background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 5px; font-family: 'Courier Prime', monospace;">React</li>
+                    <li style="background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 5px; font-family: 'Courier Prime', monospace;">Python</li>
+                    <li style="background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 5px; font-family: 'Courier Prime', monospace;">Git & GitHub</li>
+                </ul>
             </div>
-                <div class="door pers-door">
-                    <div class="door-label">creative</div>
+        </section>
+
+        <!-- FOLDER 3: RESUME -->
+        <section class="folder-section" id="resume">
+            <div class="folder-tab">03. Resume</div>
+            <div class="folder-inner">
+                <h2>Mission Logs.</h2>
+                <p>A detailed record of my past expeditions, missions accomplished, and academic milestones.</p>
+                <br>
+                <div style="border-left: 2px solid var(--pers-accent); padding-left: 20px; margin-top: 20px;">
+                    <h3 style="margin-bottom: 5px;">Lead Developer @ TechCorp</h3>
+                    <p style="font-size: 0.9rem; color: #aaa;">2023 - Present</p>
+                    <p style="margin-top: 10px; font-size: 1rem;">Spearheaded the launch of a new frontend architecture, improving load times by 40%.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- FOLDER 4: CONTACT -->
+        <section class="folder-section" id="contact">
+            <div class="folder-tab">04. Contact</div>
+            <div class="folder-inner">
+                <h2>Establish a Connection.</h2>
+                <p>Looking to collaborate on a mission? Transmit a message to my inbox, and I'll respond at lightspeed.</p>
+                <br>
+                <a href="mailto:pragyarashmighosh@gmail.com" style="display: inline-block; background-color: var(--pers-accent); color: #000; text-decoration: none; padding: 15px 30px; font-weight: bold; border-radius: 5px; margin-top: 20px; font-family: 'Courier Prime', monospace;">Initiate Comms</a>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
