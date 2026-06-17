@@ -247,7 +247,7 @@ html, body {
     grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns for 2 chunky rows */
     gap: 24px; /* The exact even spacing you see in the image */
     margin: 60px auto; /* Lots of space above and below */
-    max-width: 650px; /* Tightens the group so there's huge space on left/right */
+    max-width: 1050px; /* Tightens the group so there's huge space on left/right */
 }
 
 .skills-grid.soft {
