@@ -68,4 +68,49 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', setActiveNav, { passive: true });
     setActiveNav();
 
+    // SIDEBAR LOGIC
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+    // Function to toggle the sidebar open and closed
+    function toggleSidebar() {
+        sidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+        
+        // Prevent body scrolling when sidebar is open
+        if (sidebar.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Event listeners for the buttons
+    if (menuBtn) {
+        menuBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            toggleSidebar();
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', toggleSidebar);
+    }
+
+    // Close the sidebar if the user clicks outside of it on the overlay
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', toggleSidebar);
+    }
+
+    // Automatically close the sidebar when any link inside it is clicked
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (sidebar.classList.contains('active')) {
+                toggleSidebar();
+            }
+        });
+    });
 });
