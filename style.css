@@ -189,6 +189,7 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    padding-bottom: 20px;
     padding-left: 20px;
     border-left: 3px solid rgba(0, 0, 0, 0.2);
 }
@@ -203,7 +204,7 @@ html, body {
 
 .submenu a:hover {
     color: #ffffff;
-    padding-left: 8px; /* Slides the text slightly to the right on hover */
+    padding-left: 5px; 
 }
 
 /* HERO SECTION */
@@ -255,7 +256,9 @@ html, body {
     color: #a0a0a0;
 }
 
-.hero-subtitle .bracket { color: #a0a0a0; }
+.hero-subtitle .bracket { 
+    color: #a0a0a0; 
+}
 
 .hero-subtitle .divider {
     color: #444;
@@ -594,13 +597,24 @@ html, body {
 @media (max-width: 850px) {
     .navbar {
         height: auto;
-        padding: 15px;
-        flex-direction: column;
-        gap: 10px;
+        padding: 15px 24px;
+        flex-direction: row; /* Keeps logo and button on the same line */
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        gap: 15px 0; 
     }
 
     .menu-btn { 
         margin-left: 0; 
+        order: 2;
+    }
+
+    .nav-links {
+        width: 100%; /* Forces the links to drop down */
+        order: 3; 
+        justify-content: left; 
+        flex-wrap: wrap; 
+        gap: 15px; 
     }
 
     .sidebar {
