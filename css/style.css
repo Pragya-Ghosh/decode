@@ -12,20 +12,50 @@
 
 html, body {
     width: 100%;
-    background-color: #071320;
+    min-height: 100%;
+    background-color: #02060c;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    position: relative;
 }
 
 :root {
     --global-nav-bg: #071320;
     --global-nav-text: #ffffff;
     --pers-accent: #e6a817;
-    --folder-1: #0d1e33;
-    --folder-2: #132845;
-    --folder-3: #1a3459;
-    --folder-4: #22416d;
+    --void-bg: #02060c;
+}
+
+/* STARFIELD BACKGROUND (fixed, continuous, fades but never fully disappears) */
+.starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    background-color: var(--void-bg);
+    background-attachment: fixed;
+    overflow: hidden;
+    /* Removed the massive radial-gradient background-image and background-size */
+}
+
+.starfield::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 12, 0) 0%,
+        rgba(2, 6, 12, 0) 15%,
+        rgba(2, 6, 12, 0.55) 40%,
+        rgba(2, 6, 12, 0.55) 100%
+    );
 }
 
 /* GLOBAL NAVBAR */
@@ -141,7 +171,7 @@ html, body {
     padding-bottom: 15px;
 }
 
-.sidebar-header h3 {
+.sidebar-header h2 {
     font-family: 'Courier Prime', monospace;
     color: #000;
     font-size: 1.5rem;
@@ -213,15 +243,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--global-nav-bg);
-    background-image:
-        radial-gradient(1px 1px at 25px 5px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
-        radial-gradient(1px 1px at 50px 25px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
-        radial-gradient(1px 1px at 125px 20px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
-        radial-gradient(1.5px 1.5px at 50px 75px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
-        radial-gradient(2px 2px at 15px 125px, rgba(255,255,255,0.8), rgba(255,255,255,0)),
-        radial-gradient(2.5px 2.5px at 110px 140px, rgba(255,255,255,0.8), rgba(255,255,255,0));
-    background-size: 200px 200px;
     position: relative;
     overflow: hidden;
     margin-top: 0;
@@ -231,12 +252,12 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 50px;
     z-index: 10;
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 900;
     color: #ffffff;
     letter-spacing: -3px;
@@ -248,7 +269,7 @@ html, body {
 
 .hero-subtitle {
     font-family: 'Courier Prime', monospace;
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -280,7 +301,7 @@ html, body {
 
 .hero-hint {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #777;
     letter-spacing: 2px;
     text-transform: lowercase;
@@ -308,41 +329,45 @@ html, body {
 }
 
 .portfolio-section {
-    padding: 0 60px 80px 60px; 
-    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 80px 60px;
 }
-
-#about  { background-color: var(--folder-1); }
-#skills { background-color: var(--folder-2); }
-#resume { background-color: var(--folder-3); }
-#contact { background-color: var(--folder-4); }
 
 /* SECTION HEADER TAB */
 .section-header {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 10px;
-    background-color: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-top: none; 
-    border-radius: 0 0 8px 0; 
-    padding: 14px 28px;
-    margin-bottom: 50px;
-    margin-left: -60px; 
+    width: fit-content;
+    gap: 12px;
+    background-color: var(--global-nav-bg); /* Swapped faint yellow for brand blue */
+    border: 1px solid rgba(255,255,255,0.1); /* Swapped to a clean, subtle white border */
+    border-radius: 6px;
+    padding: 12px 24px;
+    margin: 0 0 36px 0;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.3); /* Adds a little pop-out depth */
 }
 
 .section-header i {
     color: var(--pers-accent);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .section-header span {
     font-family: 'Courier Prime', monospace;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+/* SECTION PANEL */
+.section-panel {
+    border: 1px solid rgba(230, 168, 23, 0.35);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 40px 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* SECTION INNER */
@@ -359,7 +384,7 @@ html, body {
     display: flex;
     align-items: center; 
     justify-content: flex-start; 
-    gap: 250px; 
+    gap: 100px; 
     width: 100%; 
 }
 
@@ -389,10 +414,6 @@ html, body {
     transition: transform 0.4s ease;
 }
 
-.about-photo-frame:hover img {
-    transform: scale(1.05); 
-}
-
 /* SKILL CARDS GRID */
 .skills-grid {
     display: grid;
@@ -405,7 +426,7 @@ html, body {
 
 .skills-grid.soft {
     margin-top: 60px;
-    margin-bottom: 100px;
+    margin-bottom: 0;
 }
 
 .skill-card {
@@ -628,20 +649,33 @@ html, body {
         scroll-padding-top: 160px; 
     }
 
-    .hero-title {
-        font-size: 3.5rem;
-        letter-spacing: -1px;
+    .hero-section {
+        padding-top: 140px; 
+        min-height: 100vh; 
     }
+
+    .hero-content {
+        gap: 16px; 
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem); 
+        letter-spacing: -2px;
+        line-height: 1.1; /* Keeps it tightly packed if it drops to two lines */
+    }
+
     .hero-subtitle { 
-        font-size: 1.1rem; 
+        font-size: clamp(1rem, 4.5vw, 1.4rem); 
+        flex-wrap: wrap; 
+        justify-content: center;
     }
 
     .portfolio-section {
-        padding: 0 24px 60px 24px;
+        padding: 50px 24px;
     }
-    
-    .section-header {
-        margin-left: -24px; /* match mobile padding */
+
+    .section-panel {
+        padding: 24px;
     }
 
     .about-layout {
