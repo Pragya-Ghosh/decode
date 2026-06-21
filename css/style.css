@@ -27,7 +27,7 @@ html, body {
     --void-bg: #02060c;
 }
 
-/* STARFIELD BACKGROUND (fixed, continuous, fades but never fully disappears) */
+/* STARFIELD BACKGROUND */
 .starfield {
     position: absolute;
     top: 0;
@@ -39,7 +39,6 @@ html, body {
     background-color: var(--void-bg);
     background-attachment: fixed;
     overflow: hidden;
-    /* Removed the massive radial-gradient background-image and background-size */
 }
 
 .starfield::after {
@@ -338,12 +337,12 @@ html, body {
     align-items: center;
     width: fit-content;
     gap: 12px;
-    background-color: var(--global-nav-bg); /* Swapped faint yellow for brand blue */
-    border: 1px solid rgba(255,255,255,0.1); /* Swapped to a clean, subtle white border */
+    background-color: var(--global-nav-bg); 
+    border: 1px solid rgba(255,255,255,0.1); 
     border-radius: 6px;
     padding: 12px 24px;
     margin: 0 0 36px 0;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.3); /* Adds a little pop-out depth */
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.3); 
 }
 
 .section-header i {
