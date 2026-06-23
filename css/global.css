@@ -12,12 +12,22 @@
 
 html, body {
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background-color: #02060c;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    overflow-x: clip;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 :root {
@@ -585,6 +595,7 @@ html, body {
     z-index: 200;
     position: relative;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    margin-top: auto;
 }
 
 .footer-quote {
@@ -593,6 +604,10 @@ html, body {
     color: #a0a0a0;
     font-style: italic;
     max-width: 60%;
+}
+
+.footer-quote:hover {
+    color: var(--pers-accent);
 }
 
 .footer-icons {

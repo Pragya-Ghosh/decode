@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decode - Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/developer.css">
 </head>
 <body>
-
-    <!-- BACKGROUND -->
-    
-
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">Decode</div>
@@ -21,7 +18,6 @@
             <li><a href="developer.html#projects">Projects</a></li>
             <li><a href="developer.html#blog">Blog</a></li>
             <li><a href="developer.html">Discussions</a></li>
-            <li><a href="developer.html#contact">Contact</a></li>
         </ul>
         <button class="menu-btn" id="menu-btn" title="Open Directory">
             <i class="fa-solid fa-bars"></i>
@@ -37,7 +33,6 @@
             <h2>Directory</h2>
             <i class="fa-solid fa-xmark" id="close-btn"></i>
         </div>
-        
         <ul class="sidebar-menu">
             <li>
                 <a href="developer.html" class="main-link">Home</a>
@@ -47,7 +42,6 @@
                     <li><a href="developer.html#discussions" target="_blank">Discussions</a></li>
                 </ul>
             </li>
-
             <li>
                 <a href="index.html" class="main-link" target="_blank">Decode</a>
                 <ul class="submenu">
@@ -57,7 +51,6 @@
                     <li><a href="index.html#contact" target="_blank">Contact</a></li>
                 </ul>
             </li>
-            
             <li>
                 <a href="creative.html" class="main-link" target="_blank">Creative</a>
                 <ul class="submenu">
@@ -67,163 +60,69 @@
                 </ul>
             </li>
         </ul>
-
-
     </div>
 
     <!-- HERO SECTION -->
-    <section class="hero-section" id="home">
+    <section class="developer-hero" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">Hi, I'm Pragya Ghosh.</h1>
-            <div class="hero-subtitle">
-                <span class="bracket">&lt;</span>
-                <a href="developer.html" target="_blank">developer</a>
-                <span class="divider">|</span>
-                <a href="creative.html" target="_blank">creative</a>
-                <span class="bracket">&gt;</span>
-            </div>
-            <div class="hero-hint">&#8593; hover the links</div>
+            <h1 class="hero-title">
+                <span class="prompt-arrow">&gt;</span>
+                <span class="typewriter">Pragya Ghosh</span><span class="type-cursor"></span>
+            </h1>
+            <p>I am a Software Engineer passionate about building impactful products.</p>
+            <p>My passion is building simple, beautiful user experiences.</p>
+            <p>Check out my <a href="#projects">side-projects</a> below.</p>
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTIONS -->
-    <div class="portfolio-content">
+    <!-- TERMINAL INFO WIDGET -->
+    <div class="terminal-wrapper">
+        <div class="terminal">
 
-        <!-- ABOUT -->
-        <section class="portfolio-section" id="about">
-            <div class="section-panel">
-                <div class="section-header">
-                    <i class="fa-solid fa-user"></i>
-                    <span>About</span>
-                </div>
-                <div class="section-inner about-layout">
-
-                    <div class="about-text">
-                        <p>Welcome to my database. I'm a developer passionate about building seamless, out-of-this-world experiences. When you scroll through this site, you are quite literally opening up my files. Go ahead, explore what makes me tick.</p>
-                        <p>Use this section to write a brief bio about yourself, your journey into tech, and what drives you to create amazing software.</p>
-                    </div>
-
-                    <div class="about-photo-frame">
-                        <img src="assets/images/my_img.png" alt="Pragya Ghosh">
-                    </div>
-
-                </div>
+            <div class="terminal-chrome">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
             </div>
-        </section>
 
-        <!-- SKILLS -->
-        <section class="portfolio-section" id="skills">
-            <div class="section-panel">
-                <div class="section-header">
-                    <i class="fa-solid fa-code"></i>
-                    <span>Skills</span>
+            <div class="terminal-body">
+
+                <div class="terminal-row">
+                    <span class="t-prompt">&gt; Pragya.location</span>
+                    <span class="t-string">"Bhubaneswar, India"</span>
                 </div>
-                <div class="section-inner">
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <i class="fa-brands fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-r"></i>
-                            <span>R</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-c"></i>
-                            <span>C/C++</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-brands fa-java"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-database"></i>
-                            <span>SQL</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-brands fa-git-alt"></i>
-                            <span>Git</span>
-                        </div>
-                    </div>
-                    <div class="skills-grid soft">
-                        <div class="skill-card">
-                            <i class="fa-solid fa-diagram-project"></i>
-                            <span>Project Management</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-pen-nib"></i>
-                            <span>Creative Writing</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-people-group"></i>
-                            <span>Leadership</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-handshake"></i>
-                            <span>Teamwork</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-arrows-spin"></i>
-                            <span>Adaptability</span>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fa-solid fa-lightbulb"></i>
-                            <span>Problem Solving</span>
-                        </div>
-                    </div>
+
+                <div class="terminal-row">
+                    <span class="t-prompt">&gt; Pragya.contact</span>
+                    <span class="t-array">["<a class="t-link" href="mailto:pragyarashmighosh@gmail.com">pragyarashmighosh@gmail.com</a>", "<a class="t-link" href="https://www.linkedin.com/in/pragyaghosh-decode/" target="_blank">LinkedIn</a>", "<a class="t-link" href="https://github.com/Pragya-Ghosh" target="_blank">GitHub</a>"]</span>
                 </div>
+
+                <div class="terminal-row">
+                    <span class="t-prompt">&gt; Pragya.resume</span>
+                    <span class="t-string">"<a class="t-link" href="assets/docs/Pragya_Ghosh_Resume.pdf">pragya-ghosh.pdf</a>"</span>
+                </div>
+
+                <div class="terminal-row">
+                    <span class="t-prompt">&gt; Pragya.interests</span>
+                    <span class="t-array">["design", "reading", "writing", "music"]</span>
+                </div>
+
+                <div class="terminal-row">
+                    <span class="t-prompt">&gt; Pragya.education</span>
+                    <span class="t-string">"B.Tech Computer Science Engineering - KIIT, BBSR"</span>
+                </div>
+
+                <div class="terminal-row">
+                    <span class="t-prompt">&gt; Pragya.languages</span>
+                    <span class="t-array">["Python", "R", "C/C++", "JavaScript"]</span>
+                </div>
+
+                <div class="terminal-row">
+                    <span class="t-prompt">&gt;<span class="t-cursor"></span></span>
+                </div>
+
             </div>
-        </section>
-
-        <!-- RESUME -->
-        <section class="portfolio-section" id="resume">
-            <div class="section-panel">
-                <div class="section-header">
-                    <i class="fa-solid fa-file-lines"></i>
-                    <span>Resume</span>
-                </div>
-                <div class="section-inner">
-                    <p>A detailed record of my missions, academic milestones, and skills acquired across the cosmos. Click below to download a copy.</p>
-                    <a href="assets/docs/Pragya_Ghosh_Resume.pdf" download class="resume-btn">
-                        <i class="fa-solid fa-download" style="margin-right: 8px;"></i>Download Resume
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section class="portfolio-section" id="contact">
-            <div class="section-panel">
-                <div class="section-header">
-                    <i class="fa-solid fa-satellite-dish"></i>
-                    <span>Contact</span>
-                </div>
-                <div class="contact-layout">
-                    <div class="contact-left">
-                        <p class="contact-big">Excited<br>to know<br>more?</p>
-                        <p class="contact-big contact-big--accent">Let's<br>talk!</p>
-                    </div>
-                    <div class="contact-right">
-                        <form class="contact-form" action="https://formspree.io/f/mnjyygqz" method="POST">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
-                            </div>
-                            <button type="submit" class="contact-btn">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -235,5 +134,8 @@
             <a href="mailto:pragyarashmighosh@gmail.com"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>
