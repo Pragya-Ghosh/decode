@@ -1,13 +1,89 @@
-/* BG CHANGE */
+/* =========================================
+   CSS VARIABLES
+========================================= */
+:root {
+    --bg-color: #f4f6f9;         
+    --text-main: #646d7a;        
+    --accent-dark: #172554;      
+    --accent-light: #747fe0;     
+    
+    --border-color: rgba(100, 109, 122, 0.2); 
+    
+    /* Terminal Colors */
+    --term-bg: #3b4252;
+    --term-text: #cdd0d9;
+    --term-string: #88c0d0;
+    --term-array: #ebcb8b;
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
 body {
-    background-color: #f4f6f9;
+    background-color: var(--bg-color);
 }
 
 .starfield {
     display: none;
 }
 
-/* HERO SECTION */
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar {
+    background-color: var(--bg-color); 
+    box-shadow: none !important;
+    
+    border-bottom: 1px solid var(--border-color) !important;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding-left: clamp(20px, 4vw, 40px);
+    padding-right: clamp(20px, 4vw, 40px);
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100px; 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 100; 
+}
+
+.navbar .logo {
+    color: var(--accent-dark);
+}
+
+/* NAVBAR TEXT & LINKS */
+.navbar a {
+    color: var(--text-main); 
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+    color: var(--accent-dark); 
+}
+
+.menu-btn {
+    color: var(--term-bg);
+}
+
+.menu-btn:hover {
+    color: var(--accent-dark);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
 .developer-hero {
     display: flex;
     flex-direction: column;
@@ -33,11 +109,9 @@ body {
 
 /* HERO TITLE*/
 .developer-hero .hero-title {
-    color: #172554; 
+    color: var(--accent-dark); 
     
-
     font-family: 'Inter', sans-serif; 
-    
     font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 900; 
     
@@ -56,7 +130,7 @@ body {
 .prompt-arrow {
     margin-right: 24px;
     flex-shrink: 0;
-    color: #747fe0;
+    color: var(--accent-light);
     font-weight: 400;
 }
 
@@ -80,7 +154,7 @@ body {
     display: inline-block;
     width: 0.6em;
     height: 1.2em;
-    background-color: rgba(116, 127, 224, 0.65);
+    background-color: rgba(116, 127, 224, 0.65); /* Kept as RGBA for the transparency effect */
     vertical-align: -0.15em;
     flex-shrink: 0;
     margin-left: 0;
@@ -94,8 +168,8 @@ body {
 
 /* INTRO PARAGRAPHS */
 .developer-hero p {
-    color: #646d7a;
-    font-size: 1.05rem;
+    color: var(--text-main);
+    font-size: 1.3rem;
     line-height: 1.6;
     font-weight: 400;
     margin: 0 0 10px 0; 
@@ -106,7 +180,7 @@ body {
 }
 
 .developer-hero p a {
-    color: var(--global-nav-bg);
+    color: var(--accent-dark);
     font-weight: 700;
     text-decoration: none;
     border-bottom: 2px solid currentColor;
@@ -116,7 +190,9 @@ body {
     opacity: 0.7;
 }
 
-/* TERMINAL WRAPPER */
+/* =========================================
+   TERMINAL WRAPPER
+========================================= */
 .terminal-wrapper {
     width: 100%;
     max-width: 1200px;
@@ -128,13 +204,13 @@ body {
 
 /* TERMINAL WINDOW */
 .terminal {
-    background: #3b4252;
+    background: var(--term-bg);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     font-family: Monaco, Consolas, 'Lucida Console', monospace;
     width: 100%;
-    max-width: 1050px;
+    max-width: 1200px;
 }
 
 /* TERMINAL CHROME (macOS dots) */
@@ -166,7 +242,7 @@ body {
 /* TERMINAL BODY*/
 .terminal-body {
     padding: 0;
-    color: #cdd0d9;
+    color: var(--term-text);
     font-size: 1rem;
     line-height: 24px;
     border-radius: 0 0 4px 4px;
@@ -190,7 +266,7 @@ body {
 
 /* TERMINAL TEXT TYPES */
 .t-prompt {
-    color: #cdd0d9;
+    color: var(--term-text);
     display: block;
     margin-bottom: 4px;
 }
@@ -200,18 +276,18 @@ body {
 }
 
 .t-string {
-    color: #88c0d0;
+    color: var(--term-string);
     display: block;
 }
 
 .t-array {
-    color: #ebcb8b;
+    color: var(--term-array);
     display: block;
 }
 
 /* TERMINAL LINKS */
 .t-link {
-    color: #88c0d0;
+    color: var(--term-string);
     text-decoration: none;
 }
 
@@ -224,14 +300,69 @@ body {
     display: inline-block;
     width: 0.6em;
     height: 1.1em;
-    background: #cdd0d9;
+    background: var(--term-text);
     vertical-align: text-bottom;
     margin-left: 2px;
     animation: caret 1s steps(1) infinite;
 }
 
+/* =========================================
+   FOOTER
+========================================= */
+.site-footer {
+    background-color: var(--bg-color); 
+    
+    border-top: 1px solid var(--border-color); 
+    box-shadow: none !important; 
 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding-left: clamp(20px, 4vw, 40px);
+    padding-right: clamp(20px, 4vw, 40px);
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px; 
+    gap: 20px;
+}
 
+/* FOOTER TEXT */
+.footer-quote {
+    color: var(--text-main); 
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-quote:hover {
+    color: var(--accent-dark);
+}
+
+/* FOOTER LINKS */
+.footer-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-icons a {
+    color: var(--text-main);
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: var(--accent-dark); 
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   MEDIA QUERIES
+========================================= */
 
 /* --- TABLET --- */
 @media (max-width: 1024px) {
@@ -248,8 +379,16 @@ body {
 
 /* --- MOBILE --- */
 @media (max-width: 850px) {
+    .navbar {
+        height: auto; 
+        min-height: 80px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        flex-wrap: wrap; 
+    }
+
     .developer-hero {
-        margin-top: 170px; 
+        margin-top: 140px; 
         padding-left: 24px;
         padding-right: 24px;
     }
@@ -260,15 +399,14 @@ body {
     }
     
     .developer-hero p {
-        font-size: 1.05rem;
+        font-size: 1rem;
         line-height: 1.5;
-        margin: 0 0 10px 0;
+        margin: 0 0 3px 0;
     }
 
     .terminal-wrapper {
         padding-left: 24px;
         padding-right: 24px;
-
         margin-top: 60px; 
         margin-bottom: 60px;
     }
@@ -285,5 +423,14 @@ body {
     
     .terminal-row:first-child {
         margin-top: 25px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: auto; 
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
