@@ -81,6 +81,33 @@ body {
     color: var(--accent-dark);
 }
 
+
+/*SIDEBAR*/
+.sidebar {
+    background: var(--accent-dark);
+}
+
+.sidebar-header {
+    border-bottom: 4px solid var(--bg-color); 
+}
+
+.submenu {
+    border-left: 3px solid color-mix(in srgb, var(--bg-color), transparent 70%);
+}
+
+.sidebar-header h2, #close-btn, .main-link {
+    color: var(--bg-color);
+}
+
+.submenu a {
+    color: var(--bg-color);
+    opacity: 0.7;
+}
+
+.main-link:hover, .submenu a:hover {
+    color: var(--accent-light);
+}
+
 /* =========================================
    HERO SECTION
 ========================================= */
