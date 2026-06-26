@@ -5,29 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const sections = Array.from(document.querySelectorAll('section[id]'))
             .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top +
                 (a.offsetTop - b.offsetTop));
+
         if (window.scrollY < 100) {
             navLinks.forEach(l => l.classList.remove('active'));
             document.querySelector('.nav-links a[href="#home"]')?.classList.add('active');
             return;
         }
+
         let current = null;
+
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
             if (rect.top <= window.innerHeight * 0.5) {
                 current = section.id;
             }
         });
+
         if (!current) current = sections[0].id;
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
+            if (link.getAttribute('href').endsWith(`#${current}`)) {
                 link.classList.add('active');
             }
         });
     }
+
     window.addEventListener('scroll', setActiveNav, { passive: true });
     window.addEventListener('resize', setActiveNav, { passive: true });
     setActiveNav();
+
+
 
     // SIDEBAR
     const menuBtn = document.getElementById('menu-btn');
@@ -39,9 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleSidebar() {
         sidebar.classList.toggle('active');
         sidebarOverlay.classList.toggle('active');
+
         if (sidebar.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
-        } else {
+        } 
+        else {
             document.body.style.overflow = 'auto';
         }
     }
@@ -52,12 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleSidebar();
         });
     }
+
     if (closeBtn) {
         closeBtn.addEventListener('click', toggleSidebar);
     }
+
     if (sidebarOverlay) {
         sidebarOverlay.addEventListener('click', toggleSidebar);
     }
+    
     sidebarLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (sidebar.classList.contains('active')) {
@@ -72,7 +84,7 @@ window.addEventListener('load', () => {
     const starfield = document.querySelector('.starfield');
     if (!starfield) return;
 
-    const starCount = 600;
+    const starCount = 1000;
     const docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
     const docWidth = document.documentElement.clientWidth;
 

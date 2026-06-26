@@ -484,7 +484,6 @@ body {
 
 .resume-btn:hover {
     background-color: #ffffff;
-    transform: translateY(-2px);
 }
 
 /* CONTACT LAYOUT */
@@ -581,7 +580,6 @@ body {
 
 .contact-form .contact-btn:hover {
     background-color: #ffffff;
-    transform: translateY(-2px);
 }
 
 /* FOOTER */
@@ -598,15 +596,14 @@ body {
     margin-top: auto;
 }
 
-.footer-quote {
+.footer-copyright {
     font-family: 'Courier Prime', monospace;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #a0a0a0;
-    font-style: italic;
     max-width: 60%;
 }
 
-.footer-quote:hover {
+.footer-copyright:hover {
     color: var(--pers-accent);
 }
 
