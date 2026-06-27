@@ -65,13 +65,19 @@ body {
     color: var(--accent-dark); 
 }
 
+.navbar .nav-links a.active {
+    color: var(--accent-light); 
+    border-bottom: 2px solid var(--accent-light);
+}
+
 .menu-btn {
     color: var(--term-bg);
 }
 
 .menu-btn:hover {
-    color: var(--accent-dark);
+    color: var(--accent-light);
 }
+
 
 /* =========================================
    SIDEBAR
@@ -107,10 +113,14 @@ body {
 .section {
     width: 100%;
     max-width: 1200px;
-    margin: 140px auto 0;
+    margin: 80px auto 0;
     padding-left: clamp(20px, 4vw, 40px);
     padding-right: clamp(20px, 4vw, 40px);
     box-sizing: border-box;
+}
+
+.section:last-of-type {
+    margin-bottom: 50px;
 }
 
 /* =========================================
@@ -317,6 +327,118 @@ body {
     animation: caret 1s steps(1) infinite;
 }
 
+
+/* =========================================
+   PROJECT CARDS
+========================================= */
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.project-card {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.project-img {
+    width: 200px;
+    min-width: 200px;
+    min-height: 220px;
+    background: var(--border-color);
+    flex-shrink: 0;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-body {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.project-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin: 0;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.badge--done {
+    background: rgba(20, 180, 100, 0.12);
+    color: #0a6640;
+}
+
+.badge--wip {
+    background: rgba(230, 168, 23, 0.15);
+    color: #7a4f00;
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.tag {
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-family: 'Courier Prime', monospace;
+}
+
+.gh-link {
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 0.9rem;
+    color: var(--accent-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+}
+
+.gh-link:hover {
+    color: var(--accent-dark);
+}
+
+
+
 /* =========================================
    FOOTER
 ========================================= */
@@ -360,7 +482,7 @@ body {
 }
 
 .footer-icons a:hover {
-    color: var(--accent-dark); 
+    color: var(--accent-light); 
     transform: translateY(-3px);
 }
 
@@ -388,7 +510,7 @@ body {
     }
 
     .hero {
-        margin-top: 100px;
+        margin-top: 140px;
         padding-left: 28px;
         padding-right: 28px;
     }
@@ -407,7 +529,7 @@ body {
     }
 
     .section {
-        margin-top: 80px;
+        margin-top: 10px;
         padding-left: 28px;
         padding-right: 28px;
     }
@@ -415,6 +537,10 @@ body {
     .section .section-title {
         font-size: clamp(1.6rem, 6vw, 2rem);
         margin-bottom: 32px;
+    }
+
+    .terminal {
+        margin-top: 50px;
     }
 
     .terminal-body { font-size: 0.88rem; }
@@ -427,6 +553,19 @@ body {
 
     .t-row:first-child { margin-top: 24px; }
     .t-row:last-child  { margin-bottom: 32px; }
+
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-img {
+        width: 100%;
+        min-height: 160px;
+    }
+
+    .project-body {
+        padding: 20px 24px;
+    }
 
     .site-footer {
         flex-direction: column;
