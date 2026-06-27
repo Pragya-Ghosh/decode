@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="css/developer.css">
 </head>
 <body>
+
     <!-- NAVBAR -->
     <nav class="navbar">
         <a class="logo" href="index.html">Decode</a>
         <ul class="nav-links">
-            <li><a href="developer.html#home">Home</a></li>
-            <li><a href="developer.html#projects">Projects</a></li>
-            <li><a href="developer.html#blog">Blog</a></li>
-            <li><a href="developer.html">Discussions</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#discussions">Discussions</a></li>
         </ul>
         <button class="menu-btn" id="menu-btn" title="Open Directory">
             <i class="fa-solid fa-bars"></i>
@@ -37,9 +38,9 @@
             <li>
                 <a href="developer.html" class="main-link">Home</a>
                 <ul class="submenu">
-                    <li><a href="developer.html#projects" target="_blank">Projects</a></li>
-                    <li><a href="developer.html#blog" target="_blank">Blog</a></li>
-                    <li><a href="developer.html#discussions" target="_blank">Discussions</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#discussions">Discussions</a></li>
                 </ul>
             </li>
             <li>
@@ -62,10 +63,10 @@
         </ul>
     </div>
 
-    <!-- HERO SECTION -->
-    <section class="developer-hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="content">
+            <h1 class="section-title">
                 <span class="prompt-arrow">&gt;</span>
                 <span class="typewriter">Pragya Ghosh</span><span class="type-cursor"></span>
             </h1>
@@ -75,55 +76,54 @@
         </div>
     </section>
 
-    <!-- TERMINAL INFO WIDGET -->
-    <div class="terminal-wrapper">
+    <!-- TERMINAL -->
+    <div class="section">
         <div class="terminal">
-
             <div class="terminal-chrome">
                 <span class="dot dot-red"></span>
                 <span class="dot dot-yellow"></span>
                 <span class="dot dot-green"></span>
             </div>
-
             <div class="terminal-body">
-
-                <div class="terminal-row">
-                    <span class="t-prompt">&gt; Pragya.location</span>
+                <div class="t-row">
+                    <span class="t-prompt">Pragya.location</span>
                     <span class="t-string">"Bhubaneswar, India"</span>
                 </div>
-
-                <div class="terminal-row">
-                    <span class="t-prompt">&gt; Pragya.contact</span>
+                <div class="t-row">
+                    <span class="t-prompt">Pragya.contact</span>
                     <span class="t-array">["<a class="t-link" href="mailto:pragyarashmighosh@gmail.com">pragyarashmighosh@gmail.com</a>", "<a class="t-link" href="https://www.linkedin.com/in/pragyaghosh-decode/" target="_blank">LinkedIn</a>", "<a class="t-link" href="https://github.com/Pragya-Ghosh" target="_blank">GitHub</a>"]</span>
                 </div>
-
-                <div class="terminal-row">
-                    <span class="t-prompt">&gt; Pragya.resume</span>
+                <div class="t-row">
+                    <span class="t-prompt">Pragya.resume</span>
                     <span class="t-string">"<a class="t-link" href="assets/docs/Pragya_Ghosh_Resume.pdf">pragya-ghosh.pdf</a>"</span>
                 </div>
-
-                <div class="terminal-row">
-                    <span class="t-prompt">&gt; Pragya.interests</span>
+                <div class="t-row">
+                    <span class="t-prompt">Pragya.interests</span>
                     <span class="t-array">["design", "reading", "writing", "music"]</span>
                 </div>
-
-                <div class="terminal-row">
-                    <span class="t-prompt">&gt; Pragya.education</span>
+                <div class="t-row">
+                    <span class="t-prompt">Pragya.education</span>
                     <span class="t-string">"B.Tech Computer Science Engineering - KIIT, BBSR"</span>
                 </div>
-
-                <div class="terminal-row">
-                    <span class="t-prompt">&gt; Pragya.languages</span>
+                <div class="t-row">
+                    <span class="t-prompt">Pragya.languages</span>
                     <span class="t-array">["Python", "R", "C/C++", "JavaScript"]</span>
                 </div>
-
-                <div class="terminal-row">
-                    <span class="t-prompt">&gt;<span class="t-cursor"></span></span>
+                <div class="t-row">
+                    <span class="t-prompt"><span class="t-cursor"></span></span>
                 </div>
-
             </div>
         </div>
     </div>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+        <h2 class="section-title">
+            <span class="prompt-arrow">&gt;</span>
+            Projects
+        </h2>
+        <!-- project cards go here -->
+    </section>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -135,7 +135,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script> 
+    <script src="js/script.js"></script>
 
 </body>
 </html>
